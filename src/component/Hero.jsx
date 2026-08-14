@@ -61,8 +61,8 @@ export function Hero() {
 
   useGSAP(() => {
     gsap.set("#video-frame", {
-      clipPath: "polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%)",
-      // clipPath: "polygon(14% 0, 72% 0, 88% 90%, 0 95%)",
+      // clipPath: "polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%)",
+      clipPath: "polygon(14% 0, 72% 0, 88% 90%, 0 95%)",
       borderRadius: "0% 0% 40% 10%",
     });
     gsap.from("#video-frame", {
@@ -184,7 +184,7 @@ export function Hero() {
             id="watch-trailer-bg"
             title="Watch Trailer"
             leftIcon={<TiLocationArrow/>}
-            containerClass="bg-black text-blue-75 flex-center gap-1"
+            containerClass="!bg-black text-blue-75 flex-center gap-1"
           />
         </div>
       </div>
