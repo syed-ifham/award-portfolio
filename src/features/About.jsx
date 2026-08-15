@@ -34,7 +34,6 @@ export default function About() {
         </h2>
 
         <AnimatedTitle
-          // title="Ex<b>p</b>l<b>or</b>e <b>t</b>he port<b>folio</b>"
           title="<b>sudo </b> m<b>a</b>ke <b>me</b> <b>a</b> de<b>ve</b>l<b>op<b/>er"
           containerClass="mt-5 !text-black text-center"
         />

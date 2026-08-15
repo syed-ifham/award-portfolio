@@ -1,23 +1,16 @@
-import {Card,CardTilt} from "../component/Card.jsx";
+import {Card, CardTilt} from "../component/Card.jsx";
 import {TiLocationArrow} from "react-icons/ti";
 import {videos} from "../../public/constant/videos.js";
+import TechStack from "./skills/TechStack.jsx";
 
 function Projects() {
   return (
-    <section id="projects" className="bg-black pb-52">
-      {/* Changed `container mx-auto px-3 md:px-10` -> `w-full px-4 md:px-8` */}
+    <section  className="bg-black pb-52">
       <div className="w-full px-4 md:px-8">
 
         {/* Section Header */}
-        <div className="py-32 px-2">
-          <p className="font-circular-web text-lg text-blue-50">
-            Into the MegaGame
-          </p>
-          <p className="max-w-md font-circular-web text-lg text-blue-50 opacity-50">
-            Immerse yourself in a rich and ever expanding universe where a
-            vibrant array of products converge into an interconnected overlay
-            experience on your world.
-          </p>
+        <div className="py-22 px-1">
+          <TechStack/>
         </div>
 
         {/* Feature 1: Main Full-Width Card */}
@@ -26,7 +19,7 @@ function Projects() {
             src={videos.feature1}
             title={
               <>
-                <b>Tech Stack</b>
+                <b id="projects">Mine Projects</b>
               </>
             }
             description="Full Software Engineer | Hands On Experience with major engineering tools"
@@ -34,7 +27,7 @@ function Projects() {
         </CardTilt>
 
         {/* Bento Grid */}
-        <div className="grid h-[135vh] grid-cols-2 grid-rows-3 gap-7">
+        <div     className="grid h-[135vh] grid-cols-2 grid-rows-3 gap-7">
 
           {/* 1. Tall Left Card (Spans 2 rows) */}
           <CardTilt className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2">
