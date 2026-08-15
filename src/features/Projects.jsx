@@ -1,7 +1,7 @@
-import {Card,CardTilt} from "./Card.jsx";
+import {Card,CardTilt} from "../component/Card.jsx";
 import {TiLocationArrow} from "react-icons/ti";
 
-function Features() {
+function Projects() {
   return (
     <section id="projects" className="bg-black pb-52">
       {/* Changed `container mx-auto px-3 md:px-10` -> `w-full px-4 md:px-8` */}
@@ -89,4 +89,4 @@ function Features() {
   );
 }
 
-export default Features;
+export default Projects;

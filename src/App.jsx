@@ -1,11 +1,11 @@
-import {Hero} from "./component/Hero.jsx";
-import Navbar from "./component/Navbar.jsx";
-import Features from "./component/Features.jsx";
-import Story from "./component/Story.jsx";
-import About from "./component/About.jsx";
+import {Hero} from "./features/Hero.jsx";
+import Navbar from "./features/Navbar.jsx";
+import Projects from "./features/Projects.jsx";
+import Fun from "./features/Fun.jsx";
+import About from "./features/About.jsx";
 import SmoothScroll from "./component/SmoothScroll.jsx";
-import Footer from "./component/Footer.jsx";
-import Contact from "./component/Contact.jsx";
+import Footer from "./features/Footer.jsx";
+import Contact from "./features/Contact.jsx";
 
 export default function App() {
   return (
@@ -17,8 +17,8 @@ export default function App() {
           <Navbar/>
           <Hero/>
           <About/>
-          <Features/>
-          <Story/>
+          <Projects/>
+          <Fun/>
           <Contact/>
           <Footer/>
 

@@ -1,10 +1,12 @@
 import {useEffect, useRef, useState} from "react";
-import Button from "./Button.jsx";
+import Button from "../component/Button.jsx";
 import {TiLocationArrow} from "react-icons/ti";
 
 import gsap from "gsap";
 import {useGSAP} from "@gsap/react";
 import {ScrollTrigger} from "gsap/all";
+import HeroContent from "../component/HeroContent.jsx";
+import HeroCornerText from "../component/HeroCornerText.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -26,6 +28,7 @@ export function Hero() {
   const handleVideoLoad = () => {
     setLoadedVideos((prev) => prev + 1);
   }
+
 
   useEffect(() => {
     if (loadedVideos > 0) {
@@ -79,18 +82,16 @@ export function Hero() {
   });
 
   return (
-    <div className="relative h-dvh w-screen overflow-x-hidden">
-
+    <div id="home" className=" relative h-dvh w-screen overflow-x-hidden">
       {loading && (
         <div className="flex-center absolute z-100 h-dvh w-screen overflow-hidden bg-violet-50">
           <div className="three-body">
-            <div className="three-body__dot"/>
-            <div className="three-body__dot"/>
-            <div className="three-body__dot"/>
+            <div className="three-body__dot" />
+            <div className="three-body__dot" />
+            <div className="three-body__dot" />
           </div>
         </div>
       )}
-
 
       {/* Foreground/Video Container */}
       <div
@@ -99,8 +100,7 @@ export function Hero() {
       >
         <div>
           {/* Mini Preview Video */}
-          <div
-            className="mask-clip-path absolute-center absolute z-50 size-64 cursor-pointer overflow-hidden rounded-lg">
+          <div className="mask-clip-path absolute-center absolute z-50 size-64 cursor-pointer overflow-hidden rounded-lg">
             <div
               onClick={handleMiniVdClick}
               className="origin-center scale-50 opacity-0 transition-all duration-500 ease-in hover:scale-100 hover:opacity-100"
@@ -139,60 +139,29 @@ export function Hero() {
           />
         </div>
 
+        {/* Foreground Content */}
+        <HeroContent
+          textColor="text-blue-50"
+          buttonClass="bg-pink-jinx"
+          buttonId="watch-trailer"
+          zIndex="z-40"
+          fn={handleMiniVdClick}
+        />
+
         {/* Foreground Bottom Right Heading */}
-        <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-75">
-          <b>ft.IFHAM</b>
-        </h1>
-
-        {/* Foreground Content Section */}
-        <div className="absolute left-0 top-0 z-40 size-full">
-          <div className="mt-24 px-5 sm:px-10">
-            <h1 className="special-font hero-heading text-blue-50">
-              IFH<b>A</b>M
-            </h1>
-
-            <p className="mb-5 max-w-64 font-robert-regular text-blue-100">
-              Enter the ifhamverse
-              <br/>
-              Unleashing Awward
-            </p>
-
-            <Button
-              id="watch-trailer"
-              title="Watch Trailer"
-              leftIcon={<TiLocationArrow/>}
-              containerClass="bg-yellow-300 flex-center gap-1"
-            />
-          </div>
-        </div>
+        <HeroCornerText textColor="text-blue-75" zIndex="z-40" />
       </div>
 
-      {/* Background Content Section (Black Text - Sits directly behind #video-frame) */}
-      <div className="absolute left-0 top-0 z-0 size-full">
-        <div className="mt-24 px-5 sm:px-10">
-          <h1 className="special-font hero-heading text-black">
-            IFH<b>A</b>M
-          </h1>
-
-          <p className="mb-5 max-w-64 font-robert-regular text-black">
-            Enter the ifhamverse
-            <br/>
-            Unleashing Awward
-          </p>
-
-          <Button
-            id="watch-trailer-bg"
-            title="Watch Trailer"
-            leftIcon={<TiLocationArrow/>}
-            containerClass="!bg-black text-blue-75 flex-center gap-1"
-          />
-        </div>
-      </div>
+      {/* Background Content */}
+      <HeroContent
+        textColor="text-black"
+        buttonClass="!bg-black text-blue-75"
+        buttonId="watch-trailer-bg"
+        zIndex="z-0"
+      />
 
       {/* Background Bottom Right Heading */}
-      <h1 className="special-font hero-heading absolute bottom-5 right-5 text-black">
-        <b>ft.IFHAM</b>
-      </h1>
+      <HeroCornerText textColor="text-black" zIndex="z-0" />
     </div>
   );
 }

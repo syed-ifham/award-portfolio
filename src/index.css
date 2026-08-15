@@ -20,6 +20,7 @@
 
     --color-yellow-100: #8E983F;
     --color-yellow-300: #EDFF66;
+    --color-pink-jinx: #EC4899;
 
     --color-neutral-100: #FFFFFF;
     --color-neutral-200: #BEC1CF;
@@ -30,6 +31,7 @@
     --color-neutral-700: #0E0E10;
 
     --color-black: #000000;
+
 }
 
 /* Base Font Definitions */
@@ -181,7 +183,7 @@ body {
 }
 
 @utility contact-clip-path-2 {
-    clip-path: polygon(29% 15%, 85% 30%, 50% 100%, 10% 64%);
+    clip-path: polygon(9% 0%, 95% 0%, 70% 90%, 0% 100%);
 }
 
 /* Component Styles & Animations */
@@ -262,8 +264,7 @@ body {
 .three-body__dot:nth-child(2)::after {
     bottom: 0;
     left: 0;
-    animation: wobble1 var(--uib-speed) infinite calc(var(--uib-speed) * -0.15)
-    ease-in-out;
+    animation: wobble1 var(--uib-speed) infinite calc(var(--uib-speed) * -0.15) ease-in-out;
 }
 
 .three-body__dot:nth-child(3) {

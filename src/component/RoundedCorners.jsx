@@ -1,4 +1,3 @@
-import AnimatedTitle from "./AnimatedTitle.jsx";
 
 const RoundedCorners = () => (
   <svg
