@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { FaDiscord, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import {BLOB_URL} from "../../public/constant/blob.js";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,6 +16,9 @@ const FOOTER_SOCIAL_LINKS = [
 const CURRENT_YEAR = new Date().getFullYear();
 
 const Footer = () => {
+  const footerVideo = `${BLOB_URL}footer.mp4`;
+
+
   const footerRef = useRef(null);
   const videoBgRef = useRef(null);
   const leftHeadingRef = useRef(null);
@@ -134,7 +138,7 @@ const Footer = () => {
       <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0">
         <video
           ref={videoBgRef}
-          src="/videos/footer-1.mp4"
+          src={footerVideo}
           loop
           autoPlay
           muted
@@ -158,7 +162,7 @@ const Footer = () => {
         {/* Edge Vignette */}
         <div
           ref={overlayVignetteRef}
-          className="absolute inset-0 bg-gradient-to-b from-black/85 via-transparent to-black/95"
+          className="absolute inset-0 bg-linear-to-b from-black/85 via-transparent to-black/95"
         />
       </div>
 

@@ -1,0 +1,1 @@
+export const BLOB_URL="https://7yas3piprfvoez2m.public.blob.vercel-storage.com/videos/";
