@@ -1,5 +1,6 @@
 import {Card,CardTilt} from "../component/Card.jsx";
 import {TiLocationArrow} from "react-icons/ti";
+import {videos} from "../../public/constant/videos.js";
 
 function Projects() {
   return (
@@ -22,7 +23,7 @@ function Projects() {
         {/* Feature 1: Main Full-Width Card */}
         <CardTilt className="border-hsla relative mb-7 h-96 w-full overflow-hidden rounded-md md:h-[65vh]">
           <Card
-            src="videos/feature-1.mp4"
+            src={videos.feature1}
             title={
               <>
                 <b>Tech Stack</b>
@@ -38,7 +39,7 @@ function Projects() {
           {/* 1. Tall Left Card (Spans 2 rows) */}
           <CardTilt className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2">
             <Card
-              src="videos/feature-2.mp4"
+              src={videos.feature2}
               title={<><b>Z</b>igma</>}
               description="An anime and gaming-inspired NFT collection - the IP primed for expansion."
             />
@@ -47,7 +48,7 @@ function Projects() {
           {/* 2. Top Right Card (ms-32 on mobile, md:ms-0 on desktop) */}
           <CardTilt className="bento-tilt_1 row-span-1 ms-32 md:col-span-1 md:ms-0">
             <Card
-              src="videos/feature-3.mp4"
+              src={videos.feature3}
               title={<><b>N</b>exus</>}
               description="A gamified social hub connecting agents across realms and protocols."
             />
@@ -56,7 +57,7 @@ function Projects() {
           {/* 3. Middle Right Card (me-14 on mobile, md:me-0 on desktop) */}
           <CardTilt className="bento-tilt_1 me-14 md:col-span-1 md:me-0">
             <Card
-              src="videos/feature-4.mp4"
+              src={videos.feature4}
               title={<><b>A</b>zul</>}
               description="A cross-world AI agent elevating your gameplay and everyday tasks."
             />
@@ -72,7 +73,7 @@ function Projects() {
 
           <CardTilt className="bento-tilt_2">
             <video
-              src="videos/feature-5.mp4"
+              src={videos.feature5}
               muted
               loop
               autoPlay

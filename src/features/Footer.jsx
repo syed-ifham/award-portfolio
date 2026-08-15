@@ -1,22 +1,22 @@
-import { useEffect, useRef } from "react";
-import { FaDiscord, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
+import {useEffect, useRef} from "react";
+import {FaDiscord, FaTwitter, FaInstagram, FaLinkedin} from "react-icons/fa";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import {BLOB_URL} from "../../public/constant/blob.js";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
+import {videos} from "../../public/constant/videos.js";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const FOOTER_SOCIAL_LINKS = [
-  { href: "https://discord.com", icon: <FaDiscord size={22} /> },
-  { href: "https://twitter.com/ifhamINstyle", icon: <FaTwitter size={22} /> },
-  { href: "https://instagram.com/onlyifham", icon: <FaInstagram size={22} /> },
-  { href: "https://linkedin.com/in/syedifham", icon: <FaLinkedin size={22} /> },
+  {href: "https://discord.com", icon: <FaDiscord size={22}/>},
+  {href: "https://twitter.com/ifhamINstyle", icon: <FaTwitter size={22}/>},
+  {href: "https://instagram.com/onlyifham", icon: <FaInstagram size={22}/>},
+  {href: "https://linkedin.com/in/syedifham", icon: <FaLinkedin size={22}/>},
 ];
 
 const CURRENT_YEAR = new Date().getFullYear();
 
 const Footer = () => {
-  const footerVideo = `${BLOB_URL}footer.mp4`;
+  const footerVideo = videos.footer;
 
 
   const footerRef = useRef(null);
@@ -34,7 +34,7 @@ const Footer = () => {
       // 1. Text entrance animation (Extended duration & smooth power4 ease)
       gsap.fromTo(
         splitLetters,
-        { yPercent: 120, opacity: 0 },
+        {yPercent: 120, opacity: 0},
         {
           yPercent: 0,
           opacity: 1,
@@ -52,7 +52,7 @@ const Footer = () => {
       // 2. Top bar fade & slide-in reveal
       gsap.fromTo(
         topBarRef.current,
-        { y: -30, opacity: 0 },
+        {y: -30, opacity: 0},
         {
           y: 0,
           opacity: 1,
@@ -69,7 +69,7 @@ const Footer = () => {
       // 3. Ambient Center Glow Expansion & Brightness Bloom
       gsap.fromTo(
         centerGlowRef.current,
-        { opacity: 0, scale: 0.7 },
+        {opacity: 0, scale: 0.7},
         {
           opacity: 1,
           scale: 1,
@@ -86,7 +86,7 @@ const Footer = () => {
       // 4. Parallax zoom on background video
       gsap.fromTo(
         videoBgRef.current,
-        { scale: 1.22, force3D: true },
+        {scale: 1.22, force3D: true},
         {
           scale: 1,
           force3D: true,
@@ -147,7 +147,7 @@ const Footer = () => {
         />
 
         {/* Base dark tint */}
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-black/50"/>
 
         {/* Dynamic Center Ambient Glow (Animated by GSAP) */}
         <div
@@ -205,7 +205,8 @@ const Footer = () => {
       </div>
 
       {/* 4. Bottom Large Typography Headings */}
-      <div className="relative z-20 flex flex-col lg:flex-row justify-between items-start lg:items-end w-full text-white pb-2 lg:pb-0 gap-1 lg:gap-0">
+      <div
+        className="relative z-20 flex flex-col lg:flex-row justify-between items-start lg:items-end w-full text-white pb-2 lg:pb-0 gap-1 lg:gap-0">
         <h2
           ref={leftHeadingRef}
           className="text-[clamp(2.8rem,14vw,3.5rem)] lg:text-[clamp(3.5rem,12vw,14rem)] 2xl:text-[15rem] font-bold leading-[0.88] lg:leading-[0.82] tracking-[-0.04em] lg:tracking-[-0.05em] uppercase overflow-hidden drop-shadow-2xl select-none"

@@ -7,6 +7,7 @@ import {useGSAP} from "@gsap/react";
 import {ScrollTrigger} from "gsap/all";
 import HeroContent from "../component/HeroContent.jsx";
 import HeroCornerText from "../component/HeroCornerText.jsx";
+import {BLOB_URL} from "../../public/constant/videos.js";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,7 +25,7 @@ export function Hero() {
     setHasClicked(true);
     setCurrentIndex(upcomingVideoIndex);
   }
-  const getVideoSrc = (index) => `videos/hero-${index}.mp4`;
+  const getVideoSrc = (index) => `${BLOB_URL}hero-${index}.mp4`;
   const handleVideoLoad = () => {
     setLoadedVideos((prev) => prev + 1);
   }

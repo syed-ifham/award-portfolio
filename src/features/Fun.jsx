@@ -3,6 +3,7 @@ import gsap from "gsap";
 import AnimatedTitle from "../component/AnimatedTitle.jsx";
 import RoundedCorners from "../component/RoundedCorners.jsx";
 import Button from "../component/Button.jsx";
+import {videos} from "../../public/constant/videos.js";
 
 function Fun() {
   const frameRef = useRef(null);
@@ -76,7 +77,7 @@ function Fun() {
                     onMouseMove={handleMouseMove}
                     onMouseLeave={handleMouseLeave}
                     onMouseUp={handleMouseLeave}
-                    src="/videos/about-1.mp4"
+                    src={videos.about1}
                     autoPlay loop muted
                     className="object-contain"
                 />
