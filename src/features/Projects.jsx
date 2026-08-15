@@ -2,16 +2,28 @@ import {Card, CardTilt} from "../component/Card.jsx";
 import {TiLocationArrow} from "react-icons/ti";
 import {videos} from "../../public/constant/videos.js";
 import TechStack from "./skills/TechStack.jsx";
+import AnimatedTitle from "../component/AnimatedTitle.jsx";
 
 function Projects() {
   return (
-    <section  className="bg-black pb-52">
+    <section className="bg-black pb-52">
       <div className="w-full px-4 md:px-8">
 
         {/* Section Header */}
-        <div className="py-22 px-1">
+        <div id="skills" className="py-22 px-1">
           <TechStack/>
         </div>
+
+        <p className="mb-5 text-center font-mono text-[11px] uppercase tracking-[0.28em] text-white/55">
+          Outwork. Outcode. Outlast.
+        </p>
+
+          <div className="mb-16">
+            <AnimatedTitle
+              title="<b>m</b>y <b>W</b>or<b>k</b>"
+              containerClass="pointer-events-none relative z-10 mix-blend-difference"
+            />
+          </div>
 
         {/* Feature 1: Main Full-Width Card */}
         <CardTilt className="border-hsla relative mb-7 h-96 w-full overflow-hidden rounded-md md:h-[65vh]">
@@ -19,7 +31,7 @@ function Projects() {
             src={videos.feature1}
             title={
               <>
-                <b id="projects">Mine Projects</b>
+                <b  id="projects" >Mine Projects</b>
               </>
             }
             description="Full Software Engineer | Hands On Experience with major engineering tools"
